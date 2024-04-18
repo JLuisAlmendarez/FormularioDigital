@@ -1,7 +1,7 @@
 let map, marker;
+const initialLocation = {lat: 20.659698, lng: -103.349609}; // Coordenadas iniciales, ajustables
 
 function initMap() {
-    const initialLocation = {lat: 20.659698, lng: -103.349609}; // Puedes cambiar estas coordenadas iniciales por cualquier otra
     map = new google.maps.Map(document.getElementById('map'), {
         center: initialLocation,
         zoom: 12
@@ -12,14 +12,14 @@ function initMap() {
         draggable: true
     });
 
-    // Actualiza las coordenadas al hacer clic en el mapa
-    map.addListener ('click', function (event) {
+    // Actualizar las coordenadas al hacer clic en el mapa
+    map.addListener('click', function(event) {
         marker.setPosition(event.latLng);
         updateCoordinates(event.latLng);
     });
 
-    // Actualiza las coordenadas cuando el marcador se deja de arrastrar
-    google.maps.event.addListener (marker, 'dragend', function() {
+    // Actualizar las coordenadas cuando el marcador se deja de arrastrar
+    google.maps.event.addListener(marker, 'dragend', function() {
         updateCoordinates(marker.getPosition());
     });
 }
@@ -47,13 +47,34 @@ function geocodeAddress() {
 function submitForm() {
     const lat = document.getElementById('lat').value;
     const lng = document.getElementById('lng').value;
-    console.log(`Latitud: ${lat}, Longitud: ${lng}`);
-    // Aquí podrías agregar el código para enviar los datos al servidor, o integrar el código para usar una API como Microsoft Graph
+
+    fetch('https://script.google.com/macros/s/AKfycbxR8SGp4xWieeFYmvqljJG-5tTDDsFyy-0kY4KqqGCr8gzmi9zIZNaHKVOkW-yNqu0/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({lat: lat, lng: lng})
+    })
+        .then(response => {
+            console.log('Ubicación guardada correctamente.');
+            alert('Ubicación guardada correctamente.');
+            resetMap(); // Llamar a la función que resetea el mapa y el marcador
+        })
+        .catch(error => {
+            console.error('Error al guardar la ubicación:', error);
+            alert('Error al guardar la ubicación.');
+        });
+
     return false; // Evitar que el formulario se envíe de forma tradicional
 }
 
+function resetMap() {
+    // Restablece el centro del mapa y la posición del marcador a las coordenadas iniciales
+    map.setCenter(initialLocation);
+    marker.setPosition(initialLocation);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Asegura que el mapa se inicializa solo cuando el DOM está completamente cargado
     initMap();
 });
-
