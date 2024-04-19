@@ -1,0 +1,58 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Centra el contenedor principal horizontalmente */
+}
+
+.container {
+    width: 50%; /* Estrechar el ancho del contenedor */
+    min-width: 300px;
+    max-width: 600px; /* Asegura que no sea demasiado ancho o estrecho */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Espacio desde la parte superior de la ventana */
+}
+
+h1 {
+    color: #4798C8;
+    text-align: center;
+}
+
+input[type="text"], input[type="number"], select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4798C8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #316a8c;
+}
+
+.back-button {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #bbb;
+}

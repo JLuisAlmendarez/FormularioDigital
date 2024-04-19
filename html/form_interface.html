@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Encuesta</title>
+    <link rel="stylesheet" href="../css/stylesFormInterface.css"> <!-- Asegúrate de proporcionar la ruta correcta al archivo CSS -->
+</head>
+<body>
+<div class="container">
+    <button onclick="window.location.href='panel_control.html'" class="back-button">Regresar al Panel de Control</button>
+    <h1>Crear Encuesta</h1>
+    <form id="surveyForm">
+        <input type="text" id="surveyTitle" placeholder="Título de la Encuesta" required>
+        <div id="questionsContainer"></div>
+        <button type="button" onclick="addQuestion()">Añadir Pregunta</button>
+        <button type="submit">Guardar Encuesta</button>
+    </form>
+</div>
+
+<script src="../javascript/form_creator.js"></script>
+</body>
+</html>

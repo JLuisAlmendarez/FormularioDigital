@@ -1,0 +1,78 @@
+/* Estilos básicos y configuración de la página */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    background-color: #4798C8; /* Color azul principal */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+/* Barra de navegación estilizada con flexbox */
+.nav-container {
+    background-color: #6bacd3; /* Mismo color azul para coherencia */
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+    color: #aad4f5; /* Un azul más claro para efectos hover */
+}
+
+/* Estilo del main más limpio */
+main {
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 960px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#survey-list {
+    margin-top: 20px;
+}
+
+#survey-list h2 {
+    color: #333; /* Color oscuro para títulos */
+    font-size: 18px;
+}
+
+/* Footer más simple */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4798C8; /* Color azul principal */
+    color: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
